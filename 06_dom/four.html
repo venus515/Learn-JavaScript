@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+
+
+</body>
+<script>
+function addLang(langName){
+const newli= document.createElement('li');
+newli.innerHTML=`${langName}`;
+document.querySelector('.language').appendChild('newli');
+
+}
+addLang("python");
+
+//optimizedd way
+function firstlang(langName){
+const newli=document.createElement('li');
+const add=document.createTextNode(langName);
+newli.appendchild('add');
+document.querySelector('.language').appendChild('newli');
+}
+firstlang("c++");
+
+// without function
+const secondlang=document.querySelector("li:nth-child(2)")
+const newli=document.createElement('li');
+newli.textContent="mojo";
+secondlang.replaceWith(newli);
+
+//other method
+const thirdlang=document.querySelector("li:first-child")
+thirdlang.outerHTML='<li>TypeScript</li>';
+
+//remove
+const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+
+</html>
