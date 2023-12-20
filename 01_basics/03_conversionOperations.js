@@ -15,3 +15,13 @@ console.log(boolIsLoggedIn)
 // 1=>true;0=>false;
 // ""=>false
 // "venus"=>true
+//**************operations***************** */
+let value=3
+let negValue=-value
+console.log(negValue)
+
+console.log("1"+2)// output:12
+console.log(1+"2") // 12
+console.log("1"+"2") //12
+console.log("1" +2 +2) //output: 122
+console.log(1+2+"2") // 32
