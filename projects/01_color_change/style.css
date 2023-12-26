@@ -1,0 +1,18 @@
+.button{
+    width: 100px;
+    height: 100px;
+   border:solid black 2px;
+   display: inline-block; 
+}
+#grey{
+    background: gray;
+}
+#blue{
+    background: blue;
+}
+#red{
+    background: red;
+}
+#black{
+    background: black;
+}
