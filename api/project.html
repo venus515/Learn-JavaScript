@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.form{
+    display: inline-block;
+    
+}
+</style>
+<body>
+    <div  class="form">
+        <input type="text" id="input">
+    <button id="button" class="form">find</button>
+    </div>
+    <div >
+        <img src="" alt="" id="img">
+        <h1 id="id"></h1>
+</div>
+  
+   
+</body>
+<script >
+
+let url = "https://api.github.com/users/"
+let finalurl;
+let image = document.querySelector('#img')
+let id = document.querySelector('#id')
+document.querySelector('#button').addEventListener('click', function () {
+
+    finalurl = `${url}${document.querySelector('#input').value}`
+   // console.log(`${finalurl}`);
+
+    let userinput = document.querySelector('#input')
+     userinput.value = "";
+ ///////////////**********METHOD 1***********/////////////////
+
+    // const xml = new XMLHttpRequest();
+    // xml.open('GET', finalurl);
+    // xml.onreadystatechange = function () {
+    //     if (xml.readyState === 4) {
+    //         const data = JSON.parse(this.responseText)
+    //        
+
+    //     }
+    // }
+
+    // xml.send();
+
+// ///////////////////METHOD 2///////////////////////////////////
+
+async function userdata(){
+   const response=await fetch(`${finalurl}`)
+   const data= await response.json();
+   let img_url = data.avatar_url
+        let finalId = data.id
+    console.log(`${img_url}`);
+       console.log(`ID: ${finalId}`)
+      image.src = `${img_url}`
+          
+        id.innerHTML = `ID: ${finalId}`
+
+        id.style.fontWeight = 'bold'
+
+
+}
+
+userdata();
+
+
+}) 
+
+</script>
+</html>
